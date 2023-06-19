@@ -8,9 +8,9 @@ phases:
       - npm install
   build:
     commands:
-      - npm run-script build
-artifacts:
-  files:
-    - '**/*'
-  discard-paths: no
-  base-directory: 'build'
+      - npm run build
+  post_build:
+    commands:
+      - aws s3 cp build/github-s3-react-app/ s3://s3bucket-react-app --recursive --delete
+
+      
