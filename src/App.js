@@ -15,7 +15,6 @@ function App() {
     if (cart.indexOf(item) !== -1) return;
     setCart([...cart, item]);
   };
-  
   const handleChange = (item, d) => {
     const ind = cart.indexOf(item);
     const arr = cart;
