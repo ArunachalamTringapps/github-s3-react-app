@@ -9,8 +9,12 @@ phases:
   build:
     commands:
       - npm run build
-  post_build:
-    commands:
-      - aws s3 sync build/github-s3-react-app/ s3://s3bucket-react-app --delete
+  # post_build:
+  #   commands:
+  #     - aws s3 sync build/github-s3-react-app/ s3://s3bucket-react-app --delete
+  artifacts:
+  files:
+    - '**/*'
+  base-directory: build
 
       
