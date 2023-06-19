@@ -11,6 +11,6 @@ phases:
       - npm run build
   post_build:
     commands:
-      - aws s3 sync build/github-s3-react-app/ s3://s3bucket-react-app --delete
+      - aws s3 sync build/ s3://s3bucket-react-app --delete
 
       
